@@ -1,27 +1,15 @@
-# arduino_spektrum_satellite_binding
-Enable binding mode for spektrum compatible satellite receives using an Arduino
+# Port of miracoli binding code
+
+# Particle_spektrum_satellite_binding
+Enable binding mode for spektrum compatible satellite receives using a Particle.io Photon
 
 This is a little arduino sketch to enable binding mode for spektrum compatible satellite receivers using a sequence of low pulses on startup.
 
-## Motivation
-
-The aim of the project is it, to provide a simple way to enable binding mode on spektrum compatible satellite receivers for people who already own an Arduino.
-
 ## Usage
+Sat gnd -> gnd
+Sat TX  -> D1
+Sat Vcc -> 3V3
 
-Clone the code into a folder called 'arduino_spektrum_satellite_binding', open the project in the Arduino IDE and compile and program it. Connect your satellite as follows (can be changed in code):
+Power up Photon. D7 LED will light when bind process is armed. This is your cue to quickly plug the satellite in (mainly providing power to Sat Vcc).
 
-black wire -> gnd
-
-orange wire -> PIN 10
-
-grey wire -> PIN 6
-
-Restart the Arduino. Satellite should be in binding mode now (indicated by fast blinking).
-
-## Project status
-Tested and working with Arduino Leonardo and OrangeRX R100.
-
-## TODOs
-Test with more satellites.
-
+If all goes well D7 LED will turn off and the satellite led should start rapid blinking to indicate satellite is in bind mode.
